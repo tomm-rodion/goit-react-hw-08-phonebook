@@ -59,4 +59,5 @@ export const {
   fetchingError,
   deleteContact,
 } = contactsSlice.actions;
+
 export const contactsReducer = contactsSlice.reducer;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { font, titleColor } from './Style/mixins';
+import { font, titleColor } from '../Style/mixins';
 
 export const Wrapper = styled.div`
   padding: 25px;

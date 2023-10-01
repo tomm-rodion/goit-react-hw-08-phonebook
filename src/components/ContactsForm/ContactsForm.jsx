@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import { selectContacts } from 'redux/contacts/selectorsContacts';
 import initialValues from 'utils/initialValues';
-import schema from 'utils/validationSchema';
 
 import {
   FormAddContact,
@@ -13,6 +12,7 @@ import {
 import { addContacts } from 'redux/contacts/operations';
 import Notiflix from 'notiflix';
 import { number } from 'yup';
+import { schema } from 'utils/validationSchema';
 
 export const ContactsForm = () => {
   const dispatch = useDispatch();

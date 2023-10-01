@@ -2,14 +2,14 @@ import axios from 'axios';
 import Notiflix from 'notiflix';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://650da63fa8b42265ec2c8b53.mockapi.io';
-
+// axios.defaults.baseURL = 'https://650da63fa8b42265ec2c8b53.mockapi.io';
 //зовнішні (actions),створюють action
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
   async (_, thunkAPI) => {
     try {
       const resp = await axios.get('/contacts');
+      console.log(resp);
       return resp.data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
