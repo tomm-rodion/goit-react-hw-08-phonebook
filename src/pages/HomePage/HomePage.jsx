@@ -11,9 +11,10 @@ export default function Home() {
         Welcome to the <span>Phonebook</span> web-site!
       </p>
       <p>
-        Here you can create your own phonebook very simple - just{' '}
-        <NavLink to="/register">sign-up</NavLink> or{' '}
-        <NavLink to="/login">login</NavLink> to manage your contacts. Enjoy :)
+        Here you can create your own phonebook very simple - just
+        <NavLink to="/register">sign-up</NavLink> or
+        <NavLink to="/login">login</NavLink>
+        to manage your contacts. Enjoy :)
       </p>
     </div>
   );
