@@ -16,9 +16,9 @@ import {
   TitleContacts,
   TitlePhoneBook,
   Wrapper,
-} from 'components/App/App.styled';
+} from 'pages/ContactsPage/ContactsPage.styled';
 
-export default function Contacts() {
+const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectISLoading);
   const contacts = useSelector(selectContacts);
@@ -62,4 +62,6 @@ export default function Contacts() {
       </Helmet>
     </div>
   );
-}
+};
+
+export default Contacts;

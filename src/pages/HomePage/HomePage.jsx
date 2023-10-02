@@ -1,21 +1,32 @@
 import { Helmet } from 'react-helmet';
-import { NavLink } from 'react-router-dom';
+import {
+  HomeButtonLink,
+  HomeNameApp,
+  HomeTitle,
+  Introduction,
+  Span,
+  WraperHomePage,
+} from './HomePage.styled';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>
+    <WraperHomePage>
       <Helmet>
         <title>Phonebook</title>
       </Helmet>
-      <p>
-        Welcome to the <span>Phonebook</span> web-site!
-      </p>
-      <p>
-        Here you can create your own phonebook very simple - just
-        <NavLink to="/register">sign-up</NavLink> or
-        <NavLink to="/login">login</NavLink>
-        to manage your contacts. Enjoy :)
-      </p>
-    </div>
+      <HomeTitle>
+        Welcome to the <HomeNameApp>Phonebook</HomeNameApp> web-site!
+      </HomeTitle>
+      <Introduction>
+        Here you can create your own phone book very easily Register or login to
+        manage your contacts.
+      </Introduction>
+      <Span>
+        <HomeButtonLink to="/register">sign-up</HomeButtonLink>
+        <HomeButtonLink to="/login">login</HomeButtonLink>
+      </Span>
+    </WraperHomePage>
   );
-}
+};
+
+export default Home;
