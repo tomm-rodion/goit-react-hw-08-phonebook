@@ -48,3 +48,9 @@ export const btn = () => `
     opacity: 0.5;
   }
 `;
+
+export const ContainerForm = () => `
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
