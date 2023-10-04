@@ -7,11 +7,10 @@ import {
   Span,
   WraperHomePage,
 } from './HomePage.styled';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { useAuth } from 'hooks/useAuth';
 
 const Home = () => {
-  const { user } = useAuth();
+  const { user, isLoggedIn } = useAuth();
   return (
     <WraperHomePage>
       <Helmet>
@@ -21,7 +20,7 @@ const Home = () => {
         Welcome to the <HomeNameApp>Phonebook</HomeNameApp> web-site!
       </HomeTitle>
 
-      {!selectIsLoggedIn && (
+      {!isLoggedIn && (
         <>
           <Introduction>
             Here you can create your own phone book very easily Register or
@@ -33,17 +32,21 @@ const Home = () => {
           </Span>
         </>
       )}
-      <Introduction>
-        Welcome {user.name} you are already registered In our application you
-        can: <br />
-        -add contacts <br />
-        -delete contacts <br />
-        -search for the contact you need in the list of your contacts
-        <br />
-        -our application itself will take care that you do not accidentally add
-        the same contacts
-      </Introduction>
-      <HomeButtonLink to="/contacts">contacts</HomeButtonLink>
+      {isLoggedIn && (
+        <>
+          <Introduction>
+            Welcome {user.name} you are already registered In our application
+            you can: <br />
+            -add contacts <br />
+            -delete contacts <br />
+            -search for the contact you need in the list of your contacts
+            <br />
+            -our application itself will take care that you do not accidentally
+            add the same contacts
+          </Introduction>
+          <HomeButtonLink to="/contacts">contacts</HomeButtonLink>
+        </>
+      )}
     </WraperHomePage>
   );
 };
