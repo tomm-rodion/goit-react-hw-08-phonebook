@@ -20,10 +20,19 @@ export const LoginForm = () => {
       })
     )
       .unwrap()
-      .then(() => Notiflix.Notify.success('You have successfully logged in'))
+      .then(() =>
+        Notiflix.Notify.success('You have successfully logged in', {
+          timeout: 3000,
+          distance: '60px',
+        })
+      )
       .catch(() =>
         Notiflix.Notify.failure(
-          'Oops Something went wrong. Reload the page or check the fields: email, password!'
+          'Oops Something went wrong. Reload the page or check the fields: email, password!',
+          {
+            timeout: 3000,
+            distance: '60px',
+          }
         )
       );
     resetForm();
