@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 import {
-  handleLogOutFilfilledReducer,
-  handleLoginFilfilledReducer,
-  handleRegisterFilfilledReducer,
-  handleRrefreshUserFilfilledReducer,
-  handleRrefreshUserPendingReducer,
-  handleRrefreshUserRejectedReducer,
+  handleLogOutFulfilledReducer,
+  handleLoginFulfilledReducer,
+  handleRegisterFulfilledReducer,
+  handleRefreshUserFulfilledReducer,
+  handleRefreshUserPendingReducer,
+  handleRefreshUserRejectedReducer,
 } from './reducers';
 
 const initialState = {
@@ -21,12 +21,12 @@ const authSlice = createSlice({
   initialState,
   extraReducers: bulder => {
     bulder
-      .addCase(register.fulfilled, handleRegisterFilfilledReducer)
-      .addCase(logIn.fulfilled, handleLoginFilfilledReducer)
-      .addCase(logOut.fulfilled, handleLogOutFilfilledReducer)
-      .addCase(refreshUser.pending, handleRrefreshUserPendingReducer)
-      .addCase(refreshUser.fulfilled, handleRrefreshUserFilfilledReducer)
-      .addCase(refreshUser.rejected, handleRrefreshUserRejectedReducer);
+      .addCase(register.fulfilled, handleRegisterFulfilledReducer)
+      .addCase(logIn.fulfilled, handleLoginFulfilledReducer)
+      .addCase(logOut.fulfilled, handleLogOutFulfilledReducer)
+      .addCase(refreshUser.pending, handleRefreshUserPendingReducer)
+      .addCase(refreshUser.fulfilled, handleRefreshUserFulfilledReducer)
+      .addCase(refreshUser.rejected, handleRefreshUserRejectedReducer);
   },
 });
 

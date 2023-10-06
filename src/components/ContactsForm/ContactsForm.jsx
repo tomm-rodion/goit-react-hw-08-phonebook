@@ -30,10 +30,9 @@ export const ContactsForm = () => {
       'Answer',
       'Cancel',
       function okCb(newName) {
-        const result = nameInContacts({ name: newName });
-        if (!result) {
-          dispatch(addContacts({ name: newName, number: value.number }));
-        } else {
+        const isInContacts = nameInContacts({ name: newName });
+        const name = newName.trym();
+        if (isInContacts || name) {
           Notiflix.Notify.warning(
             `What you do? Name : ${newName} already exists !!!.😵 `,
             {
@@ -41,7 +40,9 @@ export const ContactsForm = () => {
               distance: '60px',
             }
           );
+          return;
         }
+        dispatch(addContacts({ name: newName, number: value.number }));
       }
     );
   };
